@@ -1,0 +1,41 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("NPC Hub", "Ocean")
+
+-- funny
+local funny = Window:NewTab("funny")
+local funnySection = funny:NewSection("funny")
+
+funnySection:NewButton("Lose a brain cell", "Self explanatory", function()
+    print("Clicked")
+end)
+
+funnySection:NewToggle("Become awesome", "You gain 10 awesomeness points", function(state)
+    if state then
+        print("Toggle On")
+    else
+        print("Toggle Off")
+    end
+end)
+
+-- less funny
+local PTab = Window:NewTab("less funny/player")
+local PSection = PTab:NewSection("less funny/player")
+PSection:NewSlider("Walkspeed", "The walkspeed funny", 200, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+PSection:NewSlider("Jump", "Hop hop hop like a bunny", 250, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- settings
+local STab = Window:NewTab("settings")
+local SSection = STab:NewSection("the settings")
+SSection:NewSlider("gayness", "how gay you are", 999999, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+end)
+SSection:NewButton("become old and slow", "basically just sets your ws to 6", function(s)
+    print("Clicked")
+end)
+SSection:NewLabel("Hi, NPC here, I made this because I got bored")
+SSection:NewLabel("and wanted to make something")
+SSection:NewLabel("-bNPC")
+end)

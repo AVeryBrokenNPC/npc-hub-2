@@ -26,16 +26,32 @@ end)
 PSection:NewSlider("Jump", "Hop hop hop like a bunny", 250, 50, function(s)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
 end)
-
+PSection:NewButton("become crippled", "oh no", function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+    print("Clicked")
+end)
+PSection:NewButton("regain control of your legs", "ez too good", function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    print("Clicked")
+end)    
 -- settings
 local STab = Window:NewTab("settings")
 local SSection = STab:NewSection("the settings")
 SSection:NewSlider("gayness", "how gay you are", 999999, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
 end)
-SSection:NewButton("become old and slow", "basically just sets your ws to 6", function(s)
-    print("Clicked")
-end)
 SSection:NewLabel("Hi, NPC here, I made this because I got bored")
 SSection:NewLabel("and wanted to make something")
 SSection:NewLabel("-bNPC")
+
+--script loader
+local LTab = Window:NewTab("script loader")
+local LSection = LTab:NewSection("good scripts")
+LSection:NewLabel("these scripts ARE NOT mine i added credit")
+LSection:NewButton("NukeLoader", "really nice loader, credits to nukevscity", function()
+    print("Nuke Loaded")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+end)
+LSection:NewButton("Solaris", "nice hacks", function()
+    print("Solaris loaded")
+    loadstring(game:HttpGet('https://solarishub.dev/script.lua',true))()
 end)
